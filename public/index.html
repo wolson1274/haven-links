@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haven Bible App</title>
+    <title>Haven App</title>
     <style>
         * {
             margin: 0;
@@ -13,13 +13,13 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #333;
             padding: 20px;
         }
 
@@ -29,17 +29,26 @@
             width: 100%;
         }
 
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
         .logo {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: #2c3e50;
         }
 
         .subtitle {
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #666;
             line-height: 1.4;
         }
 
@@ -50,9 +59,9 @@
         .pulse {
             width: 60px;
             height: 60px;
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 4px solid rgba(0,0,0,0.1);
             border-radius: 50%;
-            border-top-color: white;
+            border-top-color: #667eea;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
         }
@@ -64,7 +73,7 @@
         .status {
             font-size: 1rem;
             margin-bottom: 2rem;
-            opacity: 0.8;
+            color: #666;
         }
 
         .app-buttons {
@@ -79,20 +88,21 @@
             align-items: center;
             justify-content: center;
             padding: 14px 24px;
-            background: rgba(255,255,255,0.15);
-            color: white;
+            background: #f8f9fa;
+            color: #333;
             text-decoration: none;
             border-radius: 12px;
             font-weight: 600;
             font-size: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 2px solid #e9ecef;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .app-button:hover {
-            background: rgba(255,255,255,0.25);
+            background: #e9ecef;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .app-button:active {
@@ -100,11 +110,23 @@
         }
 
         .ios-button {
-            background: rgba(0,0,0,0.3);
+            background: #007AFF;
+            color: white;
+            border-color: #0056CC;
+        }
+
+        .ios-button:hover {
+            background: #0056CC;
         }
 
         .android-button {
-            background: rgba(76, 175, 80, 0.3);
+            background: #4CAF50;
+            color: white;
+            border-color: #45A049;
+        }
+
+        .android-button:hover {
+            background: #45A049;
         }
 
         .error-message {
@@ -131,8 +153,9 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="logo">📖 Haven Bible App</h1>
-        <p class="subtitle">Opening your content in the Haven Bible App...</p>
+        <img src="haven-app-icon.png" alt="Haven App Icon" class="app-icon">
+        <h1 class="logo">Haven App</h1>
+        <p class="subtitle">Opening your content in the Haven App...</p>
         
         <div class="loading" id="loading">
             <div class="pulse"></div>
@@ -141,10 +164,10 @@
 
         <div class="app-buttons" id="fallback-buttons" style="display: none;">
             <a href="https://apps.apple.com/app/id6503387382" class="app-button ios-button" id="ios-button">
-                📱 Download for iOS
+                Download for iOS
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.vertmedia.haven" class="app-button android-button" id="android-button">
-                🤖 Download for Android
+                Download for Android
             </a>
         </div>
 
@@ -187,7 +210,7 @@
                     console.log('Attempting deep link:', deepLinkUrl);
                     
                     // Update status
-                    document.getElementById('status').textContent = 'Opening Haven Bible App...';
+                    document.getElementById('status').textContent = 'Opening Haven App...';
                     
                     // Try to open the deep link
                     if (this.isIOS()) {

@@ -1,10 +1,10 @@
-# Haven Bible App Deep Links
+# Haven App Deep Links
 
-A Node.js/Express web service that handles deep links for the Haven Bible App, providing seamless app-to-web integration and fallback options for mobile users.
+A Node.js/Express web service that handles deep links for the Haven App, providing seamless app-to-web integration and fallback options for mobile users.
 
 ## Overview
 
-This service runs at `app.havenbibleapp.com` and handles deep linking for the Haven Bible App:
+This service runs at `app.havenbibleapp.com` and handles deep linking for the Haven App:
 
 - **Custom URL Scheme**: `havenapp://`
 - **iOS App Store ID**: `6503387382`
@@ -140,4 +140,4 @@ MIT License - see LICENSE file for details.
 
 ## Support
 
-For technical support or feature requests, please contact the Haven Bible App development team.
+For technical support or feature requests, please contact the Haven App development team.

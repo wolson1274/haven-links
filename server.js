@@ -19,6 +19,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Haven Bible App Deep Links server running on port ${PORT}`);
+  console.log(`Haven App Deep Links server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
