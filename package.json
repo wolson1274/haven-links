@@ -1,0 +1,24 @@
+{
+  "name": "haven-bible-app-deep-links",
+  "version": "1.0.0",
+  "description": "Deep link handler for Haven Bible App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "deep-links",
+    "mobile-app",
+    "express",
+    "heroku"
+  ],
+  "author": "Haven Bible App",
+  "license": "MIT"
+}
