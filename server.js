@@ -4,10 +4,17 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from public directory with proper configuration
+app.use(express.static(path.join(__dirname, 'public'), {
+  // Set proper headers for static files
+  setHeaders: (res, path) => {
+    if (path.endsWith('.png') || path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.gif')) {
+      res.setHeader('Content-Type', 'image/*');
+    }
+  }
+}));
 
-// Handle all routes - serve the same HTML page for deep link handling
+// Handle all other routes - serve the same HTML page for deep link handling
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
